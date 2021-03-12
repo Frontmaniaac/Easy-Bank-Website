@@ -128,7 +128,7 @@ p {
 }
 .header__navigation {
   position: absolute;
-  top: -30%;
+  top: -50%;
   left: 0;
   transition: 0.3s;
 }
@@ -199,6 +199,7 @@ p {
 
 .main {
   padding-bottom: 8rem;
+  overflow-x: hidden;
 }
 @media (min-width: 1024px) {
   .main {
@@ -263,12 +264,12 @@ p {
 .main__textWrap {
   text-align: center;
   padding: 0 1.5rem;
-  padding-left: 6rem;
 }
 @media (min-width: 1024px) {
   .main__textWrap {
     max-width: 360px;
     text-align: left;
+    padding-left: 6rem;
   }
 }
 @media (min-width: 1440px) {
