@@ -10,6 +10,14 @@
 body {
     font-size: 18px;
     overflow-x: hidden;
+
+    @include breakpoint(laptopL) {
+        font-size: 20px;
+    }
+
+    @include breakpoint(laptopSL) {
+        font-size: 22px;
+    }
 }
 
 $darkBlue:hsl(233, 26%, 24%);
@@ -36,6 +44,14 @@ h2 {
     font-size: 1.5em;
 }
 
+a {
+    color: $grayBlue;
+
+    @include breakpoint(laptopSL) {
+        font-size: 0.8em;
+    }
+}
+
 p {
     color: $grayBlue;
     font-size: 0.9em;
@@ -45,6 +61,9 @@ p {
         margin: 0 auto;
     }
 
+    @include breakpoint(laptop) {
+        margin: 0;
+    }
 }
 
 .requestBtn {
@@ -57,6 +76,11 @@ p {
     display: block;
     max-width: 120px;
     margin: 0 auto;
+    text-align: center;
+
+    @include breakpoint(laptopSL) {
+        max-width: 150px;
+    }
 }
 
 .header {
@@ -70,12 +94,33 @@ p {
     box-sizing: border-box;
     z-index: 100;
 
+    @include breakpoint(laptop) {
+        padding: 1.5rem 6rem;
+    }
+
+    @include breakpoint(laptopL) {
+        padding: 2rem 6rem;
+    }
+
     &__navigation {
         display: none;
+
+        @include breakpoint(laptopL) {
+            display: flex;
+        }
+
+        &__link {
+            margin: 0 1rem;
+        }
     }
 
     &__button {
         display: none;
+
+        @include breakpoint(laptopL) {
+            display: block;
+            margin: 0;
+        }
     }
 
     & .menuBtn {
@@ -84,6 +129,10 @@ p {
         display: flex;
         justify-content: space-between;
         flex-direction: column;
+
+        @include breakpoint(laptopL) {
+            display: none;
+        }
 
         &__bar {
             width: 100%;
@@ -96,6 +145,12 @@ p {
 .main {
     padding-bottom: 8rem;
 
+    @include breakpoint(laptop) {
+        display: flex;
+        align-items: center;
+        padding: 8rem 0;
+    }
+
     &__imagesWrap {
         width: 100vw;
         position: relative;
@@ -103,6 +158,11 @@ p {
         padding-bottom: 5rem;
         align-items: center;
         display: flex;
+        order: 2;
+
+        @include breakpoint(laptop) {
+            width: 50%;
+        }
 
         &__backgroundImg {
             bottom: 0;
@@ -110,6 +170,12 @@ p {
             width: 180vw;
             position: absolute;
             z-index: -1;
+
+            @include breakpoint(laptop) {
+                left: -5%;
+                width: 75vw;
+                top: -40%;
+            }
         }
 
         &__mainImg {
@@ -118,12 +184,33 @@ p {
             padding: 0 1rem;
             max-width: 420px;
             margin: 0 auto;
+
+            @include breakpoint(laptop) {
+                max-width: 650px;
+
+            }
+
+            @include breakpoint(laptopL) {
+                max-width: 750px;
+                transform: translate(20%, 10%);
+            }
         }
     }
 
     &__textWrap {
         text-align: center;
         padding: 0 1.5rem;
+        padding-left: 6rem;
+
+        @include breakpoint(laptop) {
+            max-width: 360px;
+            text-align: left;
+        }
+
+        @include breakpoint(laptopL) {
+            max-width: 440px;
+
+        }
 
         &__text {
             padding: 1rem 0;
@@ -131,6 +218,11 @@ p {
 
         &__button {
             margin-top: 1.5rem;
+
+            @include breakpoint(laptop) {
+                margin: 1rem 0;
+
+            }
         }
     }
 }
@@ -140,14 +232,31 @@ p {
     padding: 5rem 1.5rem;
     background: $lightGrayish;
 
+    @include breakpoint(laptop) {
+        text-align: left;
+        padding: 5rem 6rem;
+    }
+
     &__text {
         margin-top: 1rem;
     }
 
     &__items {
+        min-height: 400px;
+
+        @include breakpoint(laptop) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         &__item {
             &:first-of-type {
                 margin-top: 4rem;
+
+                @include breakpoint(laptop) {
+                    margin: 0;
+                }
             }
 
             &__title {
@@ -161,6 +270,10 @@ p {
                 margin: 2rem auto;
 
             }
+
+            @include breakpoint(laptop) {
+                margin: 0 1rem;
+            }
         }
     }
 }
@@ -170,7 +283,23 @@ p {
     padding: 5rem 1.5rem;
     background: $veryLightGray;
 
+    @include breakpoint(laptopL) {
+        text-align: left;
+        padding: 5rem 6rem;
+    }
+
+    &__title {
+        @include breakpoint(laptopL) {
+            margin-bottom: 2rem;
+        }
+    }
+
     &__items {
+        @include breakpoint(laptopL) {
+            display: flex;
+
+        }
+
         &__item {
             border-radius: 0.5rem;
             overflow-x: hidden;
@@ -181,6 +310,10 @@ p {
             @include breakpoint(tablet) {
                 max-width: 460px;
                 margin: 2rem auto;
+            }
+
+            @include breakpoint(laptopL) {
+                margin: 0 1rem;
             }
 
             &__image {
@@ -215,8 +348,19 @@ p {
     text-align: center;
     padding: 3rem 0;
 
+    @include breakpoint(laptop) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem 6rem;
+    }
+
     &__comercialWrap {
         margin-bottom: 2rem;
+
+        @include breakpoint(laptop) {
+            margin: 0;
+        }
 
         &__socialsWrap {
             margin-top: 2rem;
@@ -228,12 +372,29 @@ p {
     }
 
     &__list {
+        @include breakpoint(laptopL) {
+            display: flex;
+            max-width: 300px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        @include breakpoint(laptopSL) {
+            max-width: 500px;
+        }
+
         &__link {
+            @include breakpoint(laptopL) {
+                margin: 1rem 1.5rem;
+                font-size: 0.9em;
+            }
 
             &__item {
                 &:first-of-type {
                     margin-top: 0;
                 }
+
+
 
                 font-weight: 300;
                 color: $lightFont;
@@ -246,12 +407,14 @@ p {
     &__rightsWrap {
         &__button {
             margin: 1.5rem auto;
+
+            @include breakpoint(laptopL) {
+                margin: 0 0 1.5rem auto;
+            }
         }
 
         &__rights {
             font-weight: 300;
         }
     }
-
-
 }

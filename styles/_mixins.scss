@@ -5,4 +5,22 @@
         }
     }
 
+    @else if $dev==laptop {
+        @media (min-width:1024px) {
+            @content;
+        }
+    }
+
+    @else if $dev==laptopL {
+        @media (min-width:1440px) {
+            @content;
+        }
+    }
+
+    @else if $dev==laptopSL {
+        @media (min-width:1680px) {
+            @content;
+        }
+    }
+
 }
