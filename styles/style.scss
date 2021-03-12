@@ -102,6 +102,7 @@ p {
     min-width: 100vw;
     box-sizing: border-box;
     z-index: 100;
+    transition: 0.2s;
 
     @include breakpoint(laptop) {
         padding: 1.5rem 6rem;
@@ -266,6 +267,9 @@ p {
         }
 
         &__item {
+            transform: translateY(300px);
+            transition: 0.3s;
+
             &:first-of-type {
                 margin-top: 4rem;
 
@@ -310,12 +314,15 @@ p {
     }
 
     &__items {
+
         @include breakpoint(laptopL) {
             display: flex;
 
         }
 
         &__item {
+            transform: translateY(300px);
+            transition: 0.3s;
             border-radius: 0.5rem;
             overflow-x: hidden;
             margin: 2rem 0;
