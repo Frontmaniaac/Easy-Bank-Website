@@ -92,6 +92,8 @@ p {
     }
 }
 
+
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -104,6 +106,27 @@ p {
     z-index: 100;
     transition: 0.2s;
 
+    .activeMenu {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+        padding: 3rem;
+        box-sizing: border-box;
+        background: rgb(255, 255, 255);
+        z-index: 90;
+        border-radius: 1rem;
+
+        & a {
+            margin: 0.5rem;
+        }
+    }
+
     @include breakpoint(laptop) {
         padding: 1.5rem 6rem;
     }
@@ -113,7 +136,10 @@ p {
     }
 
     &__navigation {
-        display: none;
+        position: absolute;
+        top: -30%;
+        left: 0;
+        transition: 0.3s;
 
         @include breakpoint(laptopL) {
             display: flex;
@@ -124,7 +150,6 @@ p {
             transition: 0.2s;
 
             &:hover {
-
                 color: #000;
             }
         }
@@ -145,6 +170,7 @@ p {
         display: flex;
         justify-content: space-between;
         flex-direction: column;
+        cursor: pointer;
 
         @include breakpoint(laptopL) {
             display: none;
@@ -154,7 +180,35 @@ p {
             width: 100%;
             height: 2px;
             background: $darkBlue;
+            transition: 0.3s ease;
+
         }
+    }
+}
+
+.activeMenuPanel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    background: rgba($color: $darkBlue, $alpha: 0.8);
+}
+
+.activeBar {
+    &:first-of-type {
+        transform-origin: 0% 0%;
+        transform: translateY(-3px) rotate(45deg);
+    }
+
+    &:nth-of-type(2) {
+        opacity: 0;
+    }
+
+    &:last-of-type {
+        transform: translateY(4px) rotate(-45deg);
+        transform-origin: 0% 100%;
     }
 }
 
@@ -196,7 +250,7 @@ p {
 
         &__mainImg {
             width: 92vw;
-            z-index: 50;
+            z-index: 30;
             padding: 0 1rem;
             max-width: 420px;
             margin: 0 auto;

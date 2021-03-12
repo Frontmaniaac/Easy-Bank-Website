@@ -25,3 +25,14 @@ articles.forEach(item => {
 whyUs.forEach(item => {
     pullObserver.observe(item)
 })
+const navigation = document.querySelector(".header__navigation")
+const menuBtn = document.querySelector(".menuBtn")
+const menuBars = document.querySelectorAll(".menuBtn__bar")
+const hideWebsite = document.querySelector(".hideWebsite")
+menuBtn.addEventListener('click', () => {
+    navigation.classList.toggle('activeMenu')
+    hideWebsite.classList.toggle("activeMenuPanel")
+    menuBars.forEach(item => {
+        item.classList.toggle("activeBar")
+    })
+})
