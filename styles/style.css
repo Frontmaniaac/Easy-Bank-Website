@@ -7,7 +7,7 @@
 
 body {
   font-size: 18px;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 @media (min-width: 1440px) {
   body {
