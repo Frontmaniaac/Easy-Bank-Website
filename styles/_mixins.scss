@@ -1,6 +1,6 @@
 @mixin breakpoint($dev) {
-    @if $dev==smallmobile {
-        @media (min-width:320px) {
+    @if $dev==tablet {
+        @media (min-width:768px) {
             @content;
         }
     }

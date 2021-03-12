@@ -18,6 +18,7 @@ $brightCyan:hsl(192, 70%, 51%);
 $grayBlue:hsl(233, 8%, 62%);
 $lightFont: hsl(220, 16%, 96%);
 $lightGrayish:hsl(220, 16%, 96%);
+$veryLightGray:hsl(0, 0%, 96%);
 
 h1,
 h5,
@@ -38,6 +39,12 @@ h2 {
 p {
     color: $grayBlue;
     font-size: 0.9em;
+
+    @include breakpoint(tablet) {
+        max-width: 460px;
+        margin: 0 auto;
+    }
+
 }
 
 .requestBtn {
@@ -94,6 +101,8 @@ p {
         position: relative;
         max-height: 350px;
         padding-bottom: 5rem;
+        align-items: center;
+        display: flex;
 
         &__backgroundImg {
             bottom: 0;
@@ -105,9 +114,10 @@ p {
 
         &__mainImg {
             width: 92vw;
-            transform: translateY(-5vh);
             z-index: 50;
             padding: 0 1rem;
+            max-width: 420px;
+            margin: 0 auto;
         }
     }
 
@@ -145,6 +155,12 @@ p {
             }
 
             margin: 2rem 0;
+
+            @include breakpoint(tablet) {
+                max-width: 380px;
+                margin: 2rem auto;
+
+            }
         }
     }
 }
@@ -152,14 +168,20 @@ p {
 .articles {
     text-align: center;
     padding: 5rem 1.5rem;
-    background: $lightGrayish;
+    background: $veryLightGray;
 
     &__items {
         &__item {
             border-radius: 0.5rem;
             overflow-x: hidden;
             margin: 2rem 0;
+            padding-bottom: 2rem;
             background: #fff;
+
+            @include breakpoint(tablet) {
+                max-width: 460px;
+                margin: 2rem auto;
+            }
 
             &__image {
                 width: 100%;
