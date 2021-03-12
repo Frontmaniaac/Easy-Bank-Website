@@ -67,7 +67,7 @@ p {
   border-radius: 2rem;
   color: #f3f4f6;
   font-size: 0.8em;
-  font-weight: 700;
+  font-weight: 400;
   background: linear-gradient(90deg, #31d35c, #2bb7da);
   display: block;
   max-width: 120px;
@@ -135,6 +135,8 @@ p {
 @media (min-width: 1440px) {
   .header__navigation {
     display: flex;
+    top: 0;
+    position: relative;
   }
 }
 .header__navigation__link {
@@ -203,6 +205,13 @@ p {
     display: flex;
     align-items: center;
     padding: 8rem 0;
+  }
+}
+@media (min-width: 1680px) {
+  .main {
+    display: flex;
+    align-items: center;
+    padding: 12rem 0;
   }
 }
 .main__imagesWrap {

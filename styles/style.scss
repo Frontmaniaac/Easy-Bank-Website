@@ -74,7 +74,7 @@ p {
     border-radius: 2rem;
     color: $lightFont;
     font-size: 0.8em;
-    font-weight: 700;
+    font-weight: 400;
     background: linear-gradient(90deg, $limeGreen, $brightCyan);
     display: block;
     max-width: 120px;
@@ -143,6 +143,8 @@ p {
 
         @include breakpoint(laptopL) {
             display: flex;
+            top: 0;
+            position: relative;
         }
 
         &__link {
@@ -219,6 +221,12 @@ p {
         display: flex;
         align-items: center;
         padding: 8rem 0;
+    }
+
+    @include breakpoint(laptopSL) {
+        display: flex;
+        align-items: center;
+        padding: 12rem 0;
     }
 
     &__imagesWrap {
