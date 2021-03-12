@@ -107,7 +107,7 @@ p {
   align-items: center;
   justify-content: center;
   width: 90%;
-  padding: 3rem;
+  padding: 2rem;
   box-sizing: border-box;
   background: white;
   z-index: 90;
@@ -128,7 +128,7 @@ p {
 }
 .header__navigation {
   position: absolute;
-  top: -50%;
+  top: -200px;
   left: 0;
   transition: 0.3s;
 }
@@ -199,7 +199,6 @@ p {
 
 .main {
   padding-bottom: 8rem;
-  overflow-x: hidden;
 }
 @media (min-width: 1024px) {
   .main {
