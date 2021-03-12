@@ -7,7 +7,7 @@
 
 body {
   font-size: 18px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 @media (min-width: 1440px) {
   body {
@@ -199,6 +199,7 @@ p {
 
 .main {
   padding-bottom: 8rem;
+  overflow-x: hidden;
 }
 @media (min-width: 1024px) {
   .main {

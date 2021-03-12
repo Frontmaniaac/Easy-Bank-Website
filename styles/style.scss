@@ -9,7 +9,7 @@
 
 body {
     font-size: 18px;
-    overflow: hidden;
+    overflow-x: hidden;
 
     @include breakpoint(laptopL) {
         font-size: 20px;
@@ -216,6 +216,7 @@ p {
 
 .main {
     padding-bottom: 8rem;
+    overflow-x: hidden;
 
     @include breakpoint(laptop) {
         display: flex;
